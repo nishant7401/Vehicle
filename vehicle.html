@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our full fleet of rental vehicles — cars, SUVs, jeeps, and bikes in Nepal.">
+    <title>Our Fleet | Vehicle Rental Nepal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="vehicle.css">
+</head>
+<body class="fleet-page">
+
+<!-- ========== BACKGROUND LAYERS ========== -->
+<div class="road-bg"></div>
+<div class="headlight headlight-left"></div>
+<div class="headlight headlight-right"></div>
+<div class="carbon-overlay"></div>
+<div class="speed-lines" id="speedLines"></div>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+            <img src="image/logo1.jpg" alt="Logo">
+            <span>Vehicle Rental</span>
+        </a>
+    <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="vehicle.html">Vehicle</a></li>
+    <li><a href="individualVehicle.html">Detail</a></li>
+    <li><a href="aboutUs.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html">Login</a></li>
+</ul> 
+        <div class="nav-cta">
+            <div class="nav-help">Need Help?<strong>+977 9876 65521</strong></div>
+            <a href="registration-form.html" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-user-plus"></i> Register
+            </a>
+            <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="fleet-hero">
+    <div class="hero-stripes"></div>
+
+    <div class="container">
+        <div class="fleet-hero-inner">
+
+            <div class="fleet-hero-text">
+                <span class="hero-tag">
+                    <span class="tag-dot"></span> FLEET SHOWROOM · 2026
+                </span>
+
+                <h1>Explore Our <span class="accent">Fleet</span></h1>
+
+                <p>
+                    Find the perfect vehicle for any journey — daily commutes, family trips, or Himalayan adventures across Nepal. Every car, jeep, and bike inspected, insured, and ready to roll.
+                </p>
+
+                <div class="hero-quick-stats">
+                    <div>
+                        <strong>540+</strong>
+                        <span>VEHICLES</span>
+                    </div>
+                    <div>
+                        <strong>12+</strong>
+                        <span>BRANDS</span>
+                    </div>
+                    <div>
+                        <strong>4.9★</strong>
+                        <span>RATED</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fleet-hero-visual">
+                <div class="spec-badge">
+                    <span class="spec-icon"><i class="fa-solid fa-gauge-high"></i></span>
+                    <div>
+                        <strong>Instant</strong>
+                        <span>Booking</span>
+                    </div>
+                </div>
+                <div class="spec-badge">
+                    <span class="spec-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <div>
+                        <strong>100%</strong>
+                        <span>Insured</span>
+                    </div>
+                </div>
+                <div class="spec-badge">
+                    <span class="spec-icon"><i class="fa-solid fa-bolt"></i></span>
+                    <div>
+                        <strong>24/7</strong>
+                        <span>Support</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== FILTER + GRID ========== -->
+<section class="fleet-section">
+    <div class="container">
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all" onclick="filterCars('all', this)">
+                <i class="fa-solid fa-car"></i> All Vehicles
+            </button>
+            <button class="filter-btn" data-filter="Hatchback" onclick="filterCars('Hatchback', this)">
+                <i class="fa-solid fa-car-side"></i> Hatchback
+            </button>
+            <button class="filter-btn" data-filter="SUV" onclick="filterCars('SUV', this)">
+                <i class="fa-solid fa-truck-monster"></i> SUV
+            </button>
+            <button class="filter-btn" data-filter="Electric" onclick="filterCars('Electric', this)">
+                <i class="fa-solid fa-bolt"></i> Electric
+            </button>
+            <button class="filter-btn" data-filter="Jeep" onclick="filterCars('Jeep', this)">
+                <i class="fa-solid fa-mountain-sun"></i> Jeep / 4x4
+            </button>
+            <button class="filter-btn" data-filter="Bike" onclick="filterCars('Bike', this)">
+                <i class="fa-solid fa-motorcycle"></i> Bike
+            </button>
+        </div>
+
+        <!-- Result Info -->
+        <div class="result-info">
+            <p><strong id="resultCount">14</strong> vehicles available in fleet</p>
+            <div class="result-sort">
+                <label><i class="fa-solid fa-sliders"></i> Sort</label>
+                <select onchange="sortCars(this.value)">
+                    <option value="default">Recommended</option>
+                    <option value="price-low">Price: Low → High</option>
+                    <option value="price-high">Price: High → Low</option>
+                    <option value="name">Name: A → Z</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Fleet Grid -->
+        <div class="cars-grid" id="allCars"></div>
+
+    </div>
+</section>
+
+<!-- ========== BRANDS ========== -->
+<section class="brands-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">TRUSTED BRANDS</span>
+            <h2>Premium brands in our fleet</h2>
+        </div>
+        <div class="brands-strip">
+            <span class="brand-chip">BYD</span>
+            <span class="brand-chip">Tata</span>
+            <span class="brand-chip">Hyundai</span>
+            <span class="brand-chip">Suzuki</span>
+            <span class="brand-chip">Mahindra</span>
+            <span class="brand-chip">Kia</span>
+            <span class="brand-chip">Royal Enfield</span>
+            <span class="brand-chip">Yamaha</span>
+            <span class="brand-chip">Honda</span>
+            <span class="brand-chip">Bajaj</span>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="fleet-cta">
+    <div class="container">
+        <div class="cta-box">
+            <div class="cta-text">
+                <span class="cta-tag">
+                    <i class="fa-solid fa-headset"></i> CUSTOM REQUEST
+                </span>
+                <h2>Can't find your perfect vehicle?</h2>
+                <p>Tell us what you need and we'll match you with the ideal car, jeep, or bike — usually within 24 hours.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="contact.php" class="btn-cyber">
+                    <span class="btn-txt"><i class="fa-solid fa-phone"></i> Contact Us</span>
+                </a>
+                <a href="registration-form.html" class="btn-cancel">
+                    <i class="fa-solid fa-plus"></i> Register Fleet
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand"><i class="fa-solid fa-car"></i> Vehicle Rental</div>
+                <p>Best place to rent a vehicle in Nepal. Serving customers since 2000.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="vehicle.html">Vehicle</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Vehicles</h4>
+                <ul>
+                    <li><a href="vehicle.html">BYD Atto</a></li>
+                    <li><a href="vehicle.html">Mahindra Thar</a></li>
+                    <li><a href="vehicle.html">Royal Enfield</a></li>
+                    <li><a href="vehicle.html">Hyundai Creta</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><div><strong>Address</strong>Tikathali, Lalitpur</div></div>
+                <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong>unoop@gmail.com</div></div>
+                <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><div><strong>Phone</strong>+977-98776652452</div></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 Vehicle Rental Nepal. All rights reserved.</div>
+            <div>Made with <i class="fa-solid fa-heart"></i> in Nepal</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ============================================
+    // NEPAL VEHICLE DATABASE — Real 2026 Market
+    // Prices in NPR (daily rental rates)
+    // ============================================
+    const cars = [
+        // ============ HATCHBACKS ============
+        {
+            id: 'wagonr',
+            name: 'Suzuki WagonR',
+            type: 'Hatchback',
+            price: 4500,
+            image: 'https://images.unsplash.com/photo-1549925862-990f9e4f43a7?w=800&q=80',
+            fuel: 'Petrol',
+            gear: 'Manual',
+            seats: '5 Seats'
+        },
+        {
+            id: 'swift',
+            name: 'Suzuki Swift',
+            type: 'Hatchback',
+            price: 5000,
+            image: 'https://images.unsplash.com/photo-1541443131876-44b03de101c5?w=800&q=80',
+            fuel: 'Petrol',
+            gear: 'Manual',
+            seats: '5 Seats'
+        },
+        {
+            id: 'tiago',
+            name: 'Tata Tiago EV',
+            type: 'Electric',
+            price: 5800,
+            image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80',
+            fuel: 'Electric',
+            gear: 'Auto',
+            seats: '5 Seats'
+        },
+
+        // ============ COMPACT SUVs ============
+        {
+            id: 'brezza',
+            name: 'Suzuki Brezza',
+            type: 'SUV',
+            price: 6800,
+            image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80',
+            fuel: 'Hybrid',
+            gear: 'Auto',
+            seats: '5 Seats'
+        },
+        {
+            id: 'nexon',
+            name: 'Tata Nexon EV',
+            type: 'Electric',
+            price: 7200,
+            image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800&q=80',
+            fuel: 'Electric',
+            gear: 'Auto',
+            seats: '5 Seats'
+        },
+        {
+            id: 'atto2',
+            name: 'BYD Atto 2',
+            type: 'Electric',
+            price: 7500,
+            image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&q=80',
+            fuel: 'Electric',
+            gear: 'Auto',
+            seats: '5 Seats'
+        },
+
+        // ============ MID SUVs ============
+        {
+            id: 'creta',
+            name: 'Hyundai Creta',
+            type: 'SUV',
+            price: 8500,
+            image: 'https://images.unsplash.com/photo-1631295868223-63265b40d9e4?w=800&q=80',
+            fuel: 'Petrol',
+            gear: 'Auto',
+            seats: '5 Seats'
+        },
+        {
+            id: 'seltos',
+            name: 'Kia Seltos',
+            type: 'SUV',
+            price: 9500,
+            image: 'https://images.unsplash.com/photo-1617469767053-d3b523a0b982?w=800&q=80',
+            fuel: 'Petrol',
+            gear: 'Auto',
+            seats: '5 Seats'
+        },
+
+        // ============ 4x4 SUVs / JEEPS ============
+        {
+            id: 'scorpio',
+            name: 'Mahindra Scorpio-N',
+            type: 'Jeep',
+            price: 11000,
+            image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80',
+            fuel: 'Diesel',
+            gear: 'Manual',
+            seats: '7 Seats'
+        },
+        {
+            id: 'thar',
+            name: 'Mahindra Thar ROXX',
+            type: 'Jeep',
+            price: 12000,
+            image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80',
+            fuel: 'Diesel',
+            gear: 'Manual',
+            seats: '5 Seats'
+        },
+
+        // ============ BIKES ============
+        {
+            id: 'honda',
+            name: 'Honda CB Shine',
+            type: 'Bike',
+            price: 1500,
+            image: 'https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=800&q=80',
+            fuel: 'Petrol',
+            gear: 'Manual',
+            seats: '2 Seats'
+        },
+        {
+            id: 'pulsar',
+            name: 'Bajaj Pulsar 150',
+            type: 'Bike',
+            price: 2000,
+            image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&q=80',
+            fuel: 'Petrol',
+            gear: 'Manual',
+            seats: '2 Seats'
+        },
+        {
+            id: 'yamaha',
+            name: 'Yamaha FZ-S',
+            type: 'Bike',
+            price: 2500,
+            image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=80',
+            fuel: 'Hybrid',
+            gear: 'Manual',
+            seats: '2 Seats'
+        },
+        {
+            id: 'royalenfield',
+            name: 'Royal Enfield 350',
+            type: 'Bike',
+            price: 3500,
+            image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80',
+            fuel: 'Petrol',
+            gear: 'Manual',
+            seats: '2 Seats'
+        }
+    ];
+
+    // ============================================
+    // NPR FORMATTER
+    // ============================================
+    function formatNPR(amount) {
+        return 'रू ' + amount.toLocaleString('en-IN');
+    }
+
+    // ============================================
+    // CAR CARD HTML BUILDER
+    // ============================================
+    function carCardHTML(car) {
+        const isBike = car.type === 'Bike';
+        return `
+            <div class="car-card">
+                <div class="car-image">
+                    <span class="car-badge">✓ Available</span>
+                    <img src="${car.image}" alt="${car.name}" loading="lazy">
+                </div>
+                <div class="car-body">
+                    <div class="car-title-row">
+                        <div>
+                            <h3>${car.name}</h3>
+                            <p class="type">${car.type} · ${car.fuel}</p>
+                        </div>
+                        <div class="car-price">
+                            <span class="amount">${formatNPR(car.price)}</span>
+                            <span class="per">per day</span>
+                        </div>
+                    </div>
+                    <div class="car-specs">
+                        <span><i class="fa-solid fa-cogs"></i> ${car.gear}</span>
+                        <span><i class="fa-solid fa-gas-pump"></i> ${car.fuel}</span>
+                        <span><i class="fa-solid ${isBike ? 'fa-wind' : 'fa-snowflake'}"></i> ${isBike ? 'Open' : 'AC'}</span>
+                    </div>
+                    <div class="car-actions">
+                        <a href="individualVehicle.html?id=${car.id}" class="btn btn-primary">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // ============================================
+    // SPEED LINES
+    // ============================================
+    const sl = document.getElementById('speedLines');
+    if (sl) {
+        for (let i = 0; i < 30; i++) {
+            const line = document.createElement('span');
+            line.style.top = Math.random() * 100 + '%';
+            line.style.animationDelay = Math.random() * 4 + 's';
+            line.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+            line.style.opacity = 0.15 + Math.random() * 0.35;
+            sl.appendChild(line);
+        }
+    }
+
+    // ============================================
+    // SORTING + FILTERING
+    // ============================================
+    let currentFilter = 'all';
+
+    function renderCars(list) {
+        const container = document.getElementById('allCars');
+        if (!container) return;
+
+        if (list.length === 0) {
+            container.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--txt-faint);padding:40px;">No vehicles found in this category.</p>';
+        } else {
+            container.innerHTML = list.map(carCardHTML).join('');
+        }
+        document.getElementById('resultCount').textContent = list.length;
+    }
+
+    function filterCars(category, btn) {
+        currentFilter = category;
+        if (btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+        const list = category === 'all'
+            ? [...cars]
+            : cars.filter(c => c.type === category);
+        renderCars(list);
+    }
+
+    function sortCars(mode) {
+        let list = currentFilter === 'all'
+            ? [...cars]
+            : cars.filter(c => c.type === currentFilter);
+
+        switch (mode) {
+            case 'price-low':  list.sort((a, b) => a.price - b.price); break;
+            case 'price-high': list.sort((a, b) => b.price - a.price); break;
+            case 'name':       list.sort((a, b) => a.name.localeCompare(b.name)); break;
+        }
+
+        renderCars(list);
+    }
+
+    // ============================================
+    // INITIAL RENDER
+    // ============================================
+    renderCars(cars);
+</script>
+
+</body>
+</html>

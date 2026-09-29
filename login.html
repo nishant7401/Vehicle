@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in to your Vehicle Rental account.">
+    <title>Sign In | Vehicle Rental Nepal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body class="login-page">
+
+<!-- ========== BACKGROUND LAYERS ========== -->
+<div class="road-bg"></div>
+<div class="headlight headlight-left"></div>
+<div class="headlight headlight-right"></div>
+<div class="carbon-overlay"></div>
+<div class="speed-lines" id="speedLines"></div>
+
+<!-- ========== MAIN LAYOUT ========== -->
+<main class="login-wrapper">
+
+    <!-- ============ LEFT: CAR SHOWCASE ============ -->
+    <aside class="login-side">
+
+        <div class="side-scan"></div>
+        <div class="racing-stripe"></div>
+
+        <!-- Logo -->
+        <a href="index.html" class="side-logo">
+            <span class="logo-orb"><i class="fa-solid fa-car-side"></i></span>
+            <span class="logo-text">DRIVE<span class="accent">.RENTAL</span></span>
+        </a>
+
+        <!-- Big car SVG -->
+        <div class="car-hero">
+            <svg viewBox="0 0 400 160" class="car-svg" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="carBody" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#ff5252"/>
+                        <stop offset="50%" stop-color="#ff1744"/>
+                        <stop offset="100%" stop-color="#c62828"/>
+                    </linearGradient>
+                    <linearGradient id="carGlass" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#4dd0e1" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#006064" stop-opacity="0.6"/>
+                    </linearGradient>
+                </defs>
+
+                <ellipse cx="200" cy="140" rx="150" ry="8" fill="#000" opacity="0.4"/>
+
+                <path d="M 40 110 L 40 90 Q 45 75 70 72 L 120 60 Q 140 40 180 38 L 240 38 Q 280 40 300 60 L 340 72 Q 360 75 362 90 L 362 110 Q 362 118 355 118 L 320 118 Q 315 105 305 105 L 100 105 Q 90 105 85 118 L 50 118 Q 40 118 40 110 Z"
+                      fill="url(#carBody)"/>
+
+                <path d="M 130 60 L 175 42 L 245 42 L 290 60 Z" fill="url(#carGlass)" opacity="0.85"/>
+
+                <path d="M 355 85 Q 362 85 362 92 L 362 100 Q 362 105 355 105 L 345 105 L 345 85 Z" fill="#fffde7"/>
+                <path d="M 355 88 Q 360 88 360 92 L 360 100 L 355 100 Z" fill="#ffeb3b"/>
+
+                <rect x="38" y="88" width="8" height="14" rx="2" fill="#ff1744"/>
+
+                <circle cx="110" cy="118" r="22" fill="#1a1a1a"/>
+                <circle cx="110" cy="118" r="14" fill="#333"/>
+                <circle cx="110" cy="118" r="6" fill="#666"/>
+
+                <circle cx="305" cy="118" r="22" fill="#1a1a1a"/>
+                <circle cx="305" cy="118" r="14" fill="#333"/>
+                <circle cx="305" cy="118" r="6" fill="#666"/>
+            </svg>
+
+            <div class="speed-badge">
+                <span class="speed-label">READY TO</span>
+                <span class="speed-value">DRIVE</span>
+            </div>
+        </div>
+
+        <!-- Text -->
+        <div class="side-hero">
+            <div class="status-pill">
+                <span class="dot"></span> SYSTEM ONLINE · WELCOME BACK
+            </div>
+
+            <h1 class="side-title">
+                Welcome back, <span class="grad">driver.</span>
+            </h1>
+
+            <p class="side-desc">
+                Sign in to access your bookings, manage your fleet, and continue your journey across Nepal with our premium vehicle network.
+            </p>
+        </div>
+
+        <!-- Bottom stats -->
+        <div class="side-stats">
+            <div>
+                <i class="fa-solid fa-users"></i>
+                <strong>20K+</strong>
+                <span>DRIVERS</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-car"></i>
+                <strong>540+</strong>
+                <span>VEHICLES</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-star"></i>
+                <strong>4.9</strong>
+                <span>RATING</span>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- ============ RIGHT: LOGIN FORM ============ -->
+    <section class="login-main">
+        <div class="login-card">
+
+            <!-- HUD corners -->
+            <div class="corner-tl"></div>
+            <div class="corner-tr"></div>
+            <div class="corner-bl"></div>
+            <div class="corner-br"></div>
+
+            <!-- Header -->
+            <header class="login-head">
+                <div class="head-icon">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <span class="head-tag">SECURE ACCESS</span>
+                <h2>Sign In</h2>
+                <p>Enter your credentials to continue</p>
+            </header>
+
+            <!-- Form -->
+            <form id="loginForm" onsubmit="handleLogin(event)" novalidate>
+
+                <!-- Email -->
+                <div class="input-shell">
+                    <input type="email" id="email" placeholder=" " required autocomplete="email">
+                    <label for="email">Email Address</label>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <!-- Password -->
+                <div class="input-shell password">
+                    <input type="password" id="password" placeholder=" " required autocomplete="current-password">
+                    <label for="password">Password</label>
+                    <i class="fa-solid fa-lock"></i>
+                    <button type="button" class="peek" onclick="togglePwd('password', this)" aria-label="Show password">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                </div>
+
+                <!-- Options -->
+                <div class="form-options">
+                    <label class="cyber-check">
+                        <input type="checkbox">
+                        <span class="check-box"></span>
+                        <span>Keep me signed in</span>
+                    </label>
+                    <a href="#" class="forgot">Forgot password?</a>
+                </div>
+
+                <!-- Actions -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-cyber" id="submitBtn">
+                        <span class="btn-txt">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            Sign In
+                        </span>
+                        <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                    </button>
+                </div>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span>Or continue with</span>
+                </div>
+
+                <!-- Social -->
+                <div class="social-row">
+                    <button type="button" class="social-btn google" onclick="socialLogin('Google')">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button type="button" class="social-btn facebook" onclick="socialLogin('Facebook')">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                </div>
+
+                <!-- Foot -->
+                <div class="login-foot">
+                    New to Vehicle Rental?
+                    <a href="registration-form.html">
+                        Create an account <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="login-foot secondary">
+                    <a href="index.html">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Home
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+</main>
+
+<script>
+    // ============ PASSWORD TOGGLE ============
+    function togglePwd(id, btn) {
+        const inp = document.getElementById(id);
+        const icon = btn.querySelector('i');
+        if (inp.type === 'password') {
+            inp.type = 'text';
+            icon.classList.replace('fa-eye', 'fa-eye-slash');
+        } else {
+            inp.type = 'password';
+            icon.classList.replace('fa-eye-slash', 'fa-eye');
+        }
+    }
+
+    // ============ SUBMIT ============
+    function handleLogin(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        const txt = btn.querySelector('.btn-txt');
+
+        const originalHTML = txt.innerHTML;
+        txt.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Authenticating...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            const email = document.getElementById('email').value;
+            alert(`🏁 Welcome back, driver!\n\nSigned in as: ${email}\n\n(Note: Frontend demo — connect a backend for real auth.)`);
+            window.location.href = 'index.html';
+        }, 900);
+    }
+
+    // ============ SOCIAL (demo) ============
+    function socialLogin(provider) {
+        alert(`⚙️ ${provider} sign-in will be enabled soon.`);
+    }
+
+    // ============ SPEED LINES ============
+    const sl = document.getElementById('speedLines');
+    if (sl) {
+        for (let i = 0; i < 35; i++) {
+            const line = document.createElement('span');
+            line.style.top = Math.random() * 100 + '%';
+            line.style.animationDelay = Math.random() * 4 + 's';
+            line.style.animationDuration = (1.2 + Math.random() * 2) + 's';
+            line.style.opacity = 0.15 + Math.random() * 0.4;
+            sl.appendChild(line);
+        }
+    }
+</script>
+
+</body>
+</html>

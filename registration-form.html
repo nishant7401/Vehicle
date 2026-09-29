@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register your vehicle on Nepal's most advanced car rental platform.">
+  <title>Register | Vehicle Rental</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="registration-style.css">
+</head>
+
+<body class="car-theme">
+
+<!-- ====== BACKGROUND LAYERS ====== -->
+<div class="road-bg"></div>
+<div class="headlight headlight-left"></div>
+<div class="headlight headlight-right"></div>
+<div class="carbon-overlay"></div>
+<div class="speed-lines" id="speedLines"></div>
+
+<main class="reg-wrapper">
+
+  <!-- ============ LEFT: BRAND / CAR SHOWCASE ============ -->
+  <aside class="reg-side">
+
+    <!-- Animated Car Silhouette -->
+    <div class="car-showcase">
+      <svg viewBox="0 0 400 160" class="car-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="carBody" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ff3838"/>
+            <stop offset="50%" stop-color="#ff1744"/>
+            <stop offset="100%" stop-color="#c62828"/>
+          </linearGradient>
+          <linearGradient id="carGlass" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4dd0e1" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#006064" stop-opacity="0.6"/>
+          </linearGradient>
+          <linearGradient id="carShadow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#000" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Shadow -->
+        <ellipse cx="200" cy="140" rx="150" ry="8" fill="url(#carShadow)"/>
+
+        <!-- Body -->
+        <path d="M 40 110
+                 L 40 90
+                 Q 45 75 70 72
+                 L 120 60
+                 Q 140 40 180 38
+                 L 240 38
+                 Q 280 40 300 60
+                 L 340 72
+                 Q 360 75 362 90
+                 L 362 110
+                 Q 362 118 355 118
+                 L 320 118
+                 Q 315 105 305 105
+                 L 100 105
+                 Q 90 105 85 118
+                 L 50 118
+                 Q 40 118 40 110 Z"
+              fill="url(#carBody)"/>
+
+        <!-- Roof -->
+        <path d="M 130 60 L 175 42 L 245 42 L 290 60 Z"
+              fill="url(#carGlass)" opacity="0.85"/>
+
+        <!-- Headlights -->
+        <path d="M 355 85 Q 362 85 362 92 L 362 100 Q 362 105 355 105 L 345 105 L 345 85 Z"
+              fill="#fffde7"/>
+        <path d="M 355 88 Q 360 88 360 92 L 360 100 L 355 100 Z" fill="#ffeb3b"/>
+
+        <!-- Taillight -->
+        <rect x="38" y="88" width="8" height="14" rx="2" fill="#ff1744"/>
+
+        <!-- Wheels -->
+        <circle cx="110" cy="118" r="22" fill="#1a1a1a"/>
+        <circle cx="110" cy="118" r="14" fill="#333"/>
+        <circle cx="110" cy="118" r="6" fill="#666"/>
+        <circle cx="110" cy="118" r="22" fill="none" stroke="#000" stroke-width="1"/>
+
+        <circle cx="305" cy="118" r="22" fill="#1a1a1a"/>
+        <circle cx="305" cy="118" r="14" fill="#333"/>
+        <circle cx="305" cy="118" r="6" fill="#666"/>
+        <circle cx="305" cy="118" r="22" fill="none" stroke="#000" stroke-width="1"/>
+      </svg>
+
+      <div class="speed-meter">
+        <span class="speed-label">TOP SPEED</span>
+        <span class="speed-value">240<span class="unit">km/h</span></span>
+      </div>
+    </div>
+
+    <!-- Logo -->
+    <a href="index.html" class="side-logo">
+      <span class="logo-orb"><i class="fa-solid fa-car-side"></i></span>
+      <span class="logo-text">DRIVE<span class="accent">.RENTAL</span></span>
+    </a>
+
+    <div class="side-hero">
+      <div class="status-pill">
+        <span class="dot"></span> ENGINE READY · MEMBER REGISTRATION
+      </div>
+
+      <h1 class="side-title">
+        Start your <span class="grad">engine.</span>
+      </h1>
+
+      <p class="side-desc">
+        Join Nepal's premium car rental network. Register your vehicle, list your fleet, and connect with thousands of drivers — all from one intelligent dashboard.
+      </p>
+
+      <!-- Gear Specs -->
+      <div class="gear-specs">
+        <div class="gear-item">
+          <i class="fa-solid fa-gauge-high"></i>
+          <div>
+            <strong>540+</strong>
+            <span>Vehicles</span>
+          </div>
+        </div>
+        <div class="gear-item">
+          <i class="fa-solid fa-bolt"></i>
+          <div>
+            <strong>30s</strong>
+            <span>Booking</span>
+          </div>
+        </div>
+        <div class="gear-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <strong>100%</strong>
+            <span>Insured</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard stats -->
+    <div class="side-stats">
+      <div>
+        <i class="fa-solid fa-users"></i>
+        <strong>20K+</strong>
+        <span>DRIVERS</span>
+      </div>
+      <div>
+        <i class="fa-solid fa-star"></i>
+        <strong>4.9</strong>
+        <span>RATING</span>
+      </div>
+      <div>
+        <i class="fa-solid fa-road"></i>
+        <strong>20M+</strong>
+        <span>KM DRIVEN</span>
+      </div>
+    </div>
+
+    <!-- Racing stripe -->
+    <div class="racing-stripe"></div>
+  </aside>
+
+  <!-- ============ RIGHT: REGISTRATION FORM ============ -->
+  <section class="reg-main">
+    <div class="reg-card">
+
+      <!-- Dashboard header -->
+      <div class="dash-header">
+        <div class="dash-left">
+          <span class="dash-tag">REGISTRATION</span>
+          <h2>Register Your Vehicle</h2>
+        </div>
+        <div class="dash-right">
+          <div class="gauge" id="progressGauge">
+            <svg viewBox="0 0 60 60">
+              <circle class="gauge-bg" cx="30" cy="30" r="26"/>
+              <circle class="gauge-fill" cx="30" cy="30" r="26"
+                      stroke-dasharray="163.4"
+                      stroke-dashoffset="163.4"
+                      id="gaugeCircle"/>
+            </svg>
+            <span class="gauge-value" id="gaugeValue">0%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section tabs (like dashboard tabs) -->
+      <div class="tab-strip">
+        <button class="tab-btn active" onclick="scrollToSection('sec1', this)">
+          <i class="fa-solid fa-user"></i> Driver
+        </button>
+        <button class="tab-btn" onclick="scrollToSection('sec2', this)">
+          <i class="fa-solid fa-key"></i> Credentials
+        </button>
+        <button class="tab-btn" onclick="scrollToSection('sec3', this)">
+          <i class="fa-solid fa-car"></i> Vehicle
+        </button>
+        <button class="tab-btn" onclick="scrollToSection('sec4', this)">
+          <i class="fa-solid fa-location-dot"></i> Location
+        </button>
+        <button class="tab-btn" onclick="scrollToSection('sec5', this)">
+          <i class="fa-solid fa-phone"></i> Contact
+        </button>
+        <button class="tab-btn" onclick="scrollToSection('sec6', this)">
+          <i class="fa-solid fa-calendar"></i> Plan
+        </button>
+      </div>
+
+      <form id="regForm" onsubmit="handleRegister(event)" novalidate>
+
+        <!-- ===== 01 DRIVER ===== -->
+        <section class="form-block" id="sec1">
+          <div class="block-head">
+            <span class="block-num">01</span>
+            <h3>Driver Identity</h3>
+            <span class="block-line"></span>
+            <span class="block-status"><i class="fa-solid fa-circle"></i></span>
+          </div>
+
+          <div class="grid-2">
+            <div class="input-shell">
+              <input type="text" id="firstName" placeholder=" " required data-track>
+              <label for="firstName">First Name</label>
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-shell">
+              <input type="text" id="lastName" placeholder=" " required data-track>
+              <label for="lastName">Last Name</label>
+              <i class="fa-solid fa-user"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 02 CREDENTIALS ===== -->
+        <section class="form-block" id="sec2">
+          <div class="block-head">
+            <span class="block-num">02</span>
+            <h3>Login Credentials</h3>
+            <span class="block-line"></span>
+            <span class="block-status"><i class="fa-solid fa-circle"></i></span>
+          </div>
+
+          <div class="input-shell">
+            <input type="email" id="email" placeholder=" " required data-track>
+            <label for="email">Email Address</label>
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+
+          <div class="grid-2">
+            <div class="input-shell password">
+              <input type="password" id="password" placeholder=" " minlength="8" required data-track oninput="checkStrength(this.value)">
+              <label for="password">Password</label>
+              <i class="fa-solid fa-lock"></i>
+              <button type="button" class="peek" onclick="togglePwd('password', this)">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
+            <div class="input-shell password">
+              <input type="password" id="confirm" placeholder=" " required data-track oninput="matchPwd()">
+              <label for="confirm">Confirm Password</label>
+              <i class="fa-solid fa-lock"></i>
+              <button type="button" class="peek" onclick="togglePwd('confirm', this)">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- RPM-style strength meter -->
+          <div class="rpm-meter">
+            <div class="rpm-track">
+              <span class="rpm-seg"></span>
+              <span class="rpm-seg"></span>
+              <span class="rpm-seg"></span>
+              <span class="rpm-seg"></span>
+              <span class="rpm-seg"></span>
+              <span class="rpm-seg"></span>
+            </div>
+            <small id="strengthText" class="rpm-label">
+              <i class="fa-solid fa-gauge-simple-high"></i> Password strength
+            </small>
+          </div>
+        </section>
+
+        <!-- ===== 03 VEHICLE ===== -->
+        <section class="form-block" id="sec3">
+          <div class="block-head">
+            <span class="block-num">03</span>
+            <h3>Vehicle Information</h3>
+            <span class="block-line"></span>
+            <span class="block-status"><i class="fa-solid fa-circle"></i></span>
+          </div>
+
+          <div class="grid-2">
+            <div class="input-shell">
+              <input type="text" id="vehicleName" placeholder=" " required data-track>
+              <label for="vehicleName">Vehicle Model</label>
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <div class="input-shell">
+              <input type="text" id="plateNumber" placeholder=" " required data-track>
+              <label for="plateNumber">Plate Number</label>
+              <i class="fa-solid fa-id-card"></i>
+            </div>
+          </div>
+
+          <!-- Car type selector - visual grid of car shapes -->
+          <div class="type-selector">
+            <span class="type-label">Vehicle Type</span>
+            <div class="type-grid">
+              <label class="type-card">
+                <input type="radio" name="vehicleType" value="Sedan" hidden required>
+                <div class="type-icon">
+                  <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 10 35 L 10 28 Q 12 22 20 20 L 30 15 Q 38 10 48 10 L 62 10 Q 72 10 78 15 L 88 20 Q 92 22 92 28 L 92 35 Q 92 38 88 38 L 82 38 Q 80 33 76 33 L 26 33 Q 22 33 20 38 L 14 38 Q 10 38 10 35 Z" fill="currentColor"/>
+                    <circle cx="26" cy="38" r="6" fill="#000"/>
+                    <circle cx="76" cy="38" r="6" fill="#000"/>
+                  </svg>
+                </div>
+                <span class="type-name">Sedan</span>
+              </label>
+
+              <label class="type-card">
+                <input type="radio" name="vehicleType" value="SUV" hidden>
+                <div class="type-icon">
+                  <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 8 35 L 8 25 Q 10 18 18 16 L 26 12 Q 32 8 44 8 L 60 8 Q 72 8 78 12 L 88 16 Q 94 18 94 25 L 94 35 Q 94 38 90 38 L 84 38 Q 82 33 78 33 L 24 33 Q 20 33 18 38 L 12 38 Q 8 38 8 35 Z" fill="currentColor"/>
+                    <circle cx="24" cy="38" r="7" fill="#000"/>
+                    <circle cx="78" cy="38" r="7" fill="#000"/>
+                  </svg>
+                </div>
+                <span class="type-name">SUV</span>
+              </label>
+
+              <label class="type-card">
+                <input type="radio" name="vehicleType" value="Luxury" hidden>
+                <div class="type-icon">
+                  <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 12 35 L 12 30 Q 14 22 24 19 L 36 13 Q 44 9 54 9 L 66 9 Q 74 9 80 13 L 88 19 Q 92 22 92 30 L 92 35 Q 92 38 88 38 L 80 38 Q 78 33 74 33 L 28 33 Q 24 33 22 38 L 16 38 Q 12 38 12 35 Z" fill="currentColor"/>
+                    <circle cx="28" cy="38" r="6" fill="#000"/>
+                    <circle cx="74" cy="38" r="6" fill="#000"/>
+                  </svg>
+                </div>
+                <span class="type-name">Luxury</span>
+              </label>
+
+              <label class="type-card">
+                <input type="radio" name="vehicleType" value="Electric" hidden>
+                <div class="type-icon">
+                  <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 14 35 L 14 27 Q 16 20 26 17 L 40 12 Q 48 9 56 9 L 66 9 Q 74 10 80 15 L 88 20 Q 92 23 92 28 L 92 35 Q 92 38 88 38 L 82 38 Q 80 33 76 33 L 26 33 Q 22 33 20 38 L 16 38 Q 14 38 14 35 Z" fill="currentColor"/>
+                    <circle cx="26" cy="38" r="6" fill="#000"/>
+                    <circle cx="76" cy="38" r="6" fill="#000"/>
+                    <text x="52" y="26" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">⚡</text>
+                  </svg>
+                </div>
+                <span class="type-name">Electric</span>
+              </label>
+
+              <label class="type-card">
+                <input type="radio" name="vehicleType" value="Truck" hidden>
+                <div class="type-icon">
+                  <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="15" width="55" height="20" fill="currentColor"/>
+                    <path d="M 63 20 L 78 20 Q 84 20 88 24 L 92 28 L 92 35 L 63 35 Z" fill="currentColor"/>
+                    <circle cx="22" cy="38" r="6" fill="#000"/>
+                    <circle cx="48" cy="38" r="6" fill="#000"/>
+                    <circle cx="80" cy="38" r="6" fill="#000"/>
+                  </svg>
+                </div>
+                <span class="type-name">Truck</span>
+              </label>
+
+              <label class="type-card">
+                <input type="radio" name="vehicleType" value="Bike" hidden>
+                <div class="type-icon">
+                  <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22" cy="38" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="78" cy="38" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <path d="M 22 38 L 40 20 L 60 20 L 78 38 M 40 20 L 50 20 L 55 30 L 45 30" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <span class="type-name">Bike</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 04 LOCATION ===== -->
+        <section class="form-block" id="sec4">
+          <div class="block-head">
+            <span class="block-num">04</span>
+            <h3>Location</h3>
+            <span class="block-line"></span>
+            <span class="block-status"><i class="fa-solid fa-circle"></i></span>
+          </div>
+
+          <div class="input-shell">
+            <input type="text" id="address" placeholder=" " required data-track>
+            <label for="address">Street Address</label>
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+
+          <div class="grid-2">
+            <div class="input-shell">
+              <input type="text" id="town" placeholder=" " required data-track>
+              <label for="town">Town / City</label>
+              <i class="fa-solid fa-city"></i>
+            </div>
+            <div class="input-shell">
+              <input type="text" id="country" placeholder=" " value="Nepal" required data-track>
+              <label for="country">Country</label>
+              <i class="fa-solid fa-globe"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 05 CONTACT ===== -->
+        <section class="form-block" id="sec5">
+          <div class="block-head">
+            <span class="block-num">05</span>
+            <h3>Contact & Emergency</h3>
+            <span class="block-line"></span>
+            <span class="block-status"><i class="fa-solid fa-circle"></i></span>
+          </div>
+
+          <div class="grid-2">
+            <div class="input-shell">
+              <input type="tel" id="contact" placeholder=" " required data-track>
+              <label for="contact">Mobile Number</label>
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="input-shell">
+              <input type="tel" id="work" placeholder=" " data-track>
+              <label for="work">Work Phone</label>
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="input-shell select-shell">
+              <select id="relation" data-track>
+                <option value="" disabled selected hidden></option>
+                <option>Spouse</option>
+                <option>Child</option>
+                <option>Husband</option>
+                <option>Wife</option>
+                <option>Friend</option>
+                <option>Other</option>
+              </select>
+              <label for="relation" class="static">Emergency Relation</label>
+              <i class="fa-solid fa-people-roof"></i>
+            </div>
+            <div class="input-shell">
+              <input type="text" id="relationOther" placeholder=" " data-track>
+              <label for="relationOther">Relation Name</label>
+              <i class="fa-solid fa-user-plus"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 06 RENTAL PLAN ===== -->
+        <section class="form-block" id="sec6">
+          <div class="block-head">
+            <span class="block-num">06</span>
+            <h3>Rental Plan</h3>
+            <span class="block-line"></span>
+            <span class="block-status"><i class="fa-solid fa-circle"></i></span>
+          </div>
+
+          <div class="grid-2">
+            <div class="input-shell">
+              <input type="date" id="pickupDate" placeholder=" " required data-track>
+              <label for="pickupDate" class="static">Pickup Date</label>
+              <i class="fa-solid fa-calendar"></i>
+            </div>
+            <div class="input-shell">
+              <input type="time" id="pickupTime" placeholder=" " required data-track>
+              <label for="pickupTime" class="static">Pickup Time</label>
+              <i class="fa-solid fa-clock"></i>
+            </div>
+          </div>
+
+          <div class="input-shell">
+            <input type="number" id="days" placeholder=" " min="1" max="90" required data-track>
+            <label for="days">Rental Duration (days)</label>
+            <i class="fa-solid fa-hourglass-half"></i>
+          </div>
+        </section>
+
+        <!-- ===== TERMS ===== -->
+        <label class="cyber-check">
+          <input type="checkbox" required>
+          <span class="check-box"></span>
+          <span>I confirm the vehicle details are accurate and I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></span>
+        </label>
+
+        <!-- ===== ACTIONS ===== -->
+        <div class="form-actions">
+          <button type="submit" class="btn-cyber">
+            <span class="btn-txt">
+              <i class="fa-solid fa-key"></i>
+              Start Engine
+            </span>
+            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+          <a href="index.html" class="btn-cancel">
+            <i class="fa-solid fa-xmark"></i> Cancel
+          </a>
+        </div>
+
+        <div class="form-foot">
+          Already have an account? <a href="login.html">Sign in <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+      </form>
+
+      <!-- HUD corner brackets -->
+      <div class="corner-tl"></div>
+      <div class="corner-tr"></div>
+      <div class="corner-bl"></div>
+      <div class="corner-br"></div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // ============ PASSWORD TOGGLE ============
+  function togglePwd(id, btn) {
+    const inp = document.getElementById(id);
+    const icon = btn.querySelector('i');
+    if (inp.type === 'password') {
+      inp.type = 'text';
+      icon.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+      inp.type = 'password';
+      icon.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+  }
+
+  // ============ RPM STRENGTH METER ============
+  function checkStrength(pwd) {
+    const segs = document.querySelectorAll('.rpm-meter .rpm-seg');
+    const text = document.getElementById('strengthText');
+
+    let score = 0;
+    if (pwd.length >= 8) score++;
+    if (/[a-z]/.test(pwd)) score++;
+    if (/[A-Z]/.test(pwd)) score++;
+    if (/[0-9]/.test(pwd)) score++;
+    if (/[^A-Za-z0-9]/.test(pwd)) score++;
+    if (pwd.length >= 12) score++;
+
+    segs.forEach((s, i) => {
+      s.classList.remove('weak', 'fair', 'good', 'strong');
+      if (i < score) {
+        if (score <= 2) s.classList.add('weak');
+        else if (score <= 3) s.classList.add('fair');
+        else if (score <= 4) s.classList.add('good');
+        else s.classList.add('strong');
+      }
+    });
+
+    const labels = ['', 'Weak', 'Weak', 'Fair', 'Good', 'Strong', 'MAX POWER'];
+    text.innerHTML = pwd.length
+      ? `<i class="fa-solid fa-gauge-simple-high"></i> Strength: <strong>${labels[score]}</strong>`
+      : '<i class="fa-solid fa-gauge-simple-high"></i> Password strength';
+    text.className = 'rpm-label ' + (pwd.length ? labels[score].toLowerCase().replace(' ', '-') : '');
+  }
+
+  // ============ CONFIRM MATCH ============
+  function matchPwd() {
+    const a = document.getElementById('password');
+    const b = document.getElementById('confirm');
+    b.style.borderColor = (b.value && a.value !== b.value) ? '#ff1744' : '';
+  }
+
+  // ============ SUBMIT ============
+  function handleRegister(e) {
+    e.preventDefault();
+    const a = document.getElementById('password').value;
+    const b = document.getElementById('confirm').value;
+    if (a !== b) {
+      alert('⚠️ Passwords do not match.');
+      return;
+    }
+    const name = document.getElementById('firstName').value || 'Driver';
+    alert(`🏁 Welcome aboard, ${name}!\n\nYour vehicle has been registered.\n\n🏎️  Time to hit the road.`);
+    window.location.href = 'login.html';
+  }
+
+  // ============ SPEED LINES ============
+  const sl = document.getElementById('speedLines');
+  if (sl) {
+    for (let i = 0; i < 40; i++) {
+      const line = document.createElement('span');
+      line.style.top = Math.random() * 100 + '%';
+      line.style.animationDelay = Math.random() * 3 + 's';
+      line.style.animationDuration = (0.8 + Math.random() * 1.5) + 's';
+      sl.appendChild(line);
+    }
+  }
+
+  // ============ PROGRESS GAUGE ============
+  const trackedInputs = document.querySelectorAll('[data-track]');
+  const gaugeValue = document.getElementById('gaugeValue');
+  const gaugeCircle = document.getElementById('gaugeCircle');
+  const circumference = 2 * Math.PI * 26;
+
+  function updateProgress() {
+    let filled = 0;
+    trackedInputs.forEach(inp => {
+      if (inp.value && inp.value.trim() !== '') filled++;
+    });
+    const pct = Math.round((filled / trackedInputs.length) * 100);
+    gaugeValue.textContent = pct + '%';
+    gaugeCircle.style.strokeDashoffset = circumference - (circumference * pct / 100);
+  }
+
+  trackedInputs.forEach(inp => {
+    inp.addEventListener('input', updateProgress);
+    inp.addEventListener('change', updateProgress);
+  });
+
+  // ============ SECTION SCROLL ============
+  function scrollToSection(id, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const el = document.getElementById(id);
+    if (el) {
+      const container = document.querySelector('.reg-main');
+      const top = el.offsetTop - 100;
+      container.scrollTo({ top, behavior: 'smooth' });
+      // also scroll window on mobile
+      window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
+    }
+  }
+
+  // ============ MIN DATE ============
+  document.getElementById('pickupDate').min = new Date().toISOString().split('T')[0];
+
+  // ============ VISUAL CAR TYPE SELECT ============
+  document.querySelectorAll('.type-card input').forEach(input => {
+    input.addEventListener('change', () => {
+      document.querySelectorAll('.type-card').forEach(c => c.classList.remove('selected'));
+      input.closest('.type-card').classList.add('selected');
+    });
+  });
+</script>
+
+</body>
+</html>

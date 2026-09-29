@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vehicle Rental Nepal — Rent cars, SUVs, jeeps, and bikes in Kathmandu, Lalitpur, and Pokhara.">
+    <title>Home | Vehicle Rental Nepal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="home-page">
+
+<!-- ========== BACKGROUND LAYERS ========== -->
+<div class="road-bg"></div>
+<div class="headlight headlight-left"></div>
+<div class="headlight headlight-right"></div>
+<div class="carbon-overlay"></div>
+<div class="speed-lines" id="speedLines"></div>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+            <img src="image/logo1.jpg" alt="Logo">
+            <span>Vehicle Rental</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="vehicle.html">Vehicle</a></li>
+    <li><a href="individualVehicle.html">Detail</a></li>
+    <li><a href="aboutUs.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html">Login</a></li>
+</ul>
+        <div class="nav-cta">
+            <div class="nav-help">
+                Need Help?
+                <strong>+977 9876 65521</strong>
+            </div>
+            <a href="vehicle.html" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-car"></i> Book Now
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+    <div class="hero-stripes"></div>
+
+    <div class="hero-inner">
+        <div class="hero-content">
+            <span class="hero-badge">
+                <span class="tag-dot"></span> RATED 4.8/5 · 20,000+ DRIVERS
+            </span>
+
+            <h1>
+                Experience Nepal
+                like <span class="accent-text">never before</span>
+            </h1>
+
+            <p class="hero-description">
+                From Kathmandu city drives to Himalayan jeep adventures — cars, SUVs, jeeps, and bikes, all at honest NPR prices. 540+ vehicles, transparent pricing, zero hidden fees.
+            </p>
+
+            <div class="hero-actions">
+                <a href="vehicle.html" class="btn-cyber">
+                    <span class="btn-txt"><i class="fa-solid fa-car"></i> Browse Vehicles</span>
+                </a>
+                <a href="aboutUs.html" class="btn-cancel">
+                    Learn More <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>540+</strong>
+                    <span>VEHICLES AVAILABLE</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>20k+</strong>
+                    <span>HAPPY CUSTOMERS</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>25+</strong>
+                    <span>YEARS EXPERIENCE</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- HERO PHOTO SHOWCASE -->
+        <div class="hero-showcase">
+            <div class="showcase-frame">
+                <div class="frame-corner tl"></div>
+                <div class="frame-corner tr"></div>
+                <div class="frame-corner bl"></div>
+                <div class="frame-corner br"></div>
+
+                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=1200&q=80"
+                     alt="BYD Atto 2 - Featured EV"
+                     class="showcase-img-main"
+                     onerror="this.src='https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&q=80'">
+
+                <div class="showcase-overlay"></div>
+
+                <div class="showcase-label-top">
+                    <span class="live-dot"></span> FEATURED
+                </div>
+
+                <div class="showcase-info">
+                    <div class="showcase-badge">
+                        <i class="fa-solid fa-star"></i> 4.9
+                    </div>
+                    <h3>BYD Atto 2 Essential</h3>
+                    <p>Kathmandu · Available now</p>
+                    <div class="showcase-price">
+                        <span class="amount">रू 7,500</span>
+                        <span class="per">/ day</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mini-card mini-1">
+                <div class="mini-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div>
+                    <strong>Instant</strong>
+                    <span>Booking</span>
+                </div>
+            </div>
+
+            <div class="mini-card mini-2">
+                <div class="mini-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div>
+                    <strong>100%</strong>
+                    <span>Insured</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="features-strip">
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature-tile">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <h3>Wide Availability</h3>
+                    <p>Vehicles ready across Kathmandu, Pokhara, Chitwan &amp; more.</p>
+                </div>
+            </div>
+            <div class="feature-tile">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <div>
+                    <h3>Himalayan Ready</h3>
+                    <p>4x4 jeeps and sturdy SUVs built for mountain roads.</p>
+                </div>
+            </div>
+            <div class="feature-tile">
+                <i class="fa-solid fa-wallet"></i>
+                <div>
+                    <h3>Best Savings</h3>
+                    <p>Honest NPR pricing — no hidden charges, ever.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-section">
+    <div class="container">
+        <div class="section-header light">
+            <span class="eyebrow">Facts in Numbers</span>
+            <h2>Trusted by thousands nationwide</h2>
+            <p>Rent a car, jeep, or bike in seconds with honest NPR pricing, 540+ vehicles, and 4.8/5 rated service across Nepal.</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="fa-solid fa-car"></i>
+                <span class="number" data-target="540">0</span>
+                <span class="label">Vehicles</span>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-user"></i>
+                <span class="number" data-target="20000" data-suffix="+">0</span>
+                <span class="label">Customers</span>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-calendar-plus"></i>
+                <span class="number" data-target="25" data-suffix="+">0</span>
+                <span class="label">Years</span>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span class="number" data-target="20" data-suffix="M+">0</span>
+                <span class="label">Km Driven</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURED FLEET ============ -->
+<section class="section fleet-preview">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">Featured Fleet</span>
+            <h2>Choose the vehicle that suits you</h2>
+            <p>Handpicked cars, jeeps, and bikes for every Nepal journey.</p>
+        </div>
+
+        <div class="cars-grid" id="featuredCars"></div>
+
+        <div style="text-align:center; margin-top:48px;">
+            <a href="vehicle.html" class="btn-outline-racing">
+                View All Vehicles <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PHOTO GALLERY ============ -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">On The Road</span>
+            <h2>Moments from Nepal</h2>
+            <p>Real journeys across Nepal — city, hills, and Himalayas.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-tall">
+                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&q=80"
+                     alt="Electric SUV"
+                     onerror="this.src='https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80'">
+                <div class="gallery-overlay">
+                    <span class="gallery-tag">Electric SUV</span>
+                    <h4>Kathmandu City EV</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80"
+                     alt="Jeep on mountain"
+                     onerror="this.src='https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80'">
+                <div class="gallery-overlay">
+                    <span class="gallery-tag">Jeep</span>
+                    <h4>Mustang Jeep Trip</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80"
+                     alt="Motorcycle"
+                     onerror="this.src='https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=800&q=80'">
+                <div class="gallery-overlay">
+                    <span class="gallery-tag">Bike</span>
+                    <h4>Royal Enfield Ride</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item gallery-wide">
+                <img src="https://images.unsplash.com/photo-1631295868223-63265b40d9e4?w=1200&q=80"
+                     alt="SUV on highway"
+                     onerror="this.src='https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=1200&q=80'">
+                <div class="gallery-overlay">
+                    <span class="gallery-tag">SUV</span>
+                    <h4>Highway Comfort</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80"
+                     alt="Compact EV"
+                     onerror="this.src='https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&q=80'">
+                <div class="gallery-overlay">
+                    <span class="gallery-tag">Hatchback</span>
+                    <h4>Tiago EV Commute</h4>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80"
+                     alt="Compact SUV"
+                     onerror="this.src='https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80'">
+                <div class="gallery-overlay">
+                    <span class="gallery-tag">Compact SUV</span>
+                    <h4>Brezza Hill Drive</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-inner">
+            <div>
+                <h2>Ready to explore Nepal on wheels?</h2>
+                <p>From city rides to Himalayan adventures — cars, jeeps, and bikes at honest NPR prices.</p>
+                <form class="cta-search" onsubmit="event.preventDefault(); window.location.href='vehicle.html';">
+                    <input type="text" placeholder="Enter your city (e.g. Kathmandu)">
+                    <button type="submit" class="btn-cyber">
+                        <span class="btn-txt"><i class="fa-solid fa-magnifying-glass"></i> Search</span>
+                    </button>
+                </form>
+            </div>
+            <div style="text-align:center;">
+                <i class="fa-solid fa-mountain-sun" style="font-size: 200px; color: rgba(255,255,255,0.06);"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <i class="fa-solid fa-car"></i> Vehicle Rental
+                </div>
+                <p>Best place to rent a vehicle in Nepal. Serving customers with trust and care since 2000.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="vehicle.html">Vehicle</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Vehicles</h4>
+                <ul>
+                    <li><a href="vehicle.html">BYD Atto</a></li>
+                    <li><a href="vehicle.html">Mahindra Thar</a></li>
+                    <li><a href="vehicle.html">Royal Enfield</a></li>
+                    <li><a href="vehicle.html">Hyundai Creta</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Address</strong>
+                        Tikathali, Lalitpur, Nepal
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong>
+                        unoop@gmail.com
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <strong>Phone</strong>
+                        +977-98776652452
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 Vehicle Rental Nepal. All rights reserved.</div>
+            <div>Made with <i class="fa-solid fa-heart"></i> in Nepal</div>
+        </div>
+    </div>
+</footer>
+
+<!-- ========== LOAD SCRIPT.JS FIRST ========== -->
+<script src="script.js"></script>
+
+<!-- ========== THEN FORCE RENDER NEPAL VEHICLES ========== -->
+<script>
+    // ============================================
+    // SAFETY: Force-render Nepal vehicles (defeats cache)
+    // ============================================
+    function forceRenderFeatured() {
+        const container = document.getElementById('featuredCars');
+        if (!container) return;
+
+        // Use the cars array from script.js
+        if (typeof cars !== 'undefined' && typeof carCardHTML === 'function') {
+            container.innerHTML = cars.map(carCardHTML).join('');
+        }
+    }
+
+    // Run on multiple events
+    document.addEventListener('DOMContentLoaded', forceRenderFeatured);
+    window.addEventListener('load', forceRenderFeatured);
+    setTimeout(forceRenderFeatured, 100);
+    setTimeout(forceRenderFeatured, 500);
+
+    // ============ SPEED LINES ============
+    const sl = document.getElementById('speedLines');
+    if (sl) {
+        for (let i = 0; i < 30; i++) {
+            const line = document.createElement('span');
+            line.style.top = Math.random() * 100 + '%';
+            line.style.animationDelay = Math.random() * 4 + 's';
+            line.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+            line.style.opacity = 0.15 + Math.random() * 0.35;
+            sl.appendChild(line);
+        }
+    }
+
+    // ============ STAT COUNTERS ============
+    const counters = document.querySelectorAll('.stat-item .number');
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    counters.forEach(c => {
+                        const target = parseInt(c.dataset.target);
+                        const suffix = c.dataset.suffix || '';
+                        const start = performance.now();
+                        const duration = 1600;
+                        (function tick(now) {
+                            const p = Math.min((now - start) / duration, 1);
+                            const eased = 1 - Math.pow(1 - p, 3);
+                            c.textContent = Math.floor(eased * target).toLocaleString() + suffix;
+                            if (p < 1) requestAnimationFrame(tick);
+                            else c.textContent = target.toLocaleString() + suffix;
+                        })(start);
+                    });
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.35 });
+        obs.observe(statsSection);
+    }
+</script>
+</body>
+</html>

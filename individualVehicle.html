@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vehicle details — specifications, equipment, and instant booking.">
+    <title>Vehicle Detail | Vehicle Rental Nepal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="individualVehicle.css">
+</head>
+<body class="detail-page">
+
+<div class="road-bg"></div>
+<div class="headlight headlight-left"></div>
+<div class="headlight headlight-right"></div>
+<div class="carbon-overlay"></div>
+<div class="speed-lines" id="speedLines"></div>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+            <img src="image/logo1.jpg" alt="Logo">
+            <span>Vehicle Rental</span>
+        </a>
+       <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="vehicle.html">Vehicle</a></li>
+    <li><a href="individualVehicle.html">Detail</a></li>
+    <li><a href="aboutUs.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html">Login</a></li>
+</ul>
+        <div class="nav-cta">
+            <div class="nav-help">Need Help?<strong>+977 9876 65521</strong></div>
+            <a href="vehicle.html" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-car"></i> Book Now
+            </a>
+            <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </div>
+</nav>
+
+<section class="detail-hero">
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="vehicle.html">Fleet</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span id="breadcrumbName">BYD Atto 2</span>
+        </div>
+
+        <div class="detail-grid">
+
+            <div class="detail-visual">
+
+                <div class="visual-frame">
+                    <div class="frame-corner tl"></div>
+                    <div class="frame-corner tr"></div>
+                    <div class="frame-corner bl"></div>
+                    <div class="frame-corner br"></div>
+
+                    <div class="visual-badge">
+                        <span class="live-dot"></span> AVAILABLE NOW
+                    </div>
+
+                    <div class="visual-type" id="visualType">ELECTRIC · SUV</div>
+
+                    <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&q=80"
+                         alt="Vehicle"
+                         id="mainImage"
+                         onerror="this.src='https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1200&q=80'">
+
+                    <div class="visual-thumbs" id="thumbnailStrip"></div>
+                </div>
+
+                <div class="visual-quick-stats">
+                    <div class="qs-item">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div>
+                            <strong id="qsTopSpeed">160</strong>
+                            <span>km/h top</span>
+                        </div>
+                    </div>
+                    <div class="qs-item">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div>
+                            <strong id="qsAccel">7.9s</strong>
+                            <span>0-100 km/h</span>
+                        </div>
+                    </div>
+                    <div class="qs-item">
+                        <i class="fa-solid fa-horse-head"></i>
+                        <div>
+                            <strong id="qsPower">136</strong>
+                            <span>horsepower</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="detail-info">
+
+                <div class="info-header">
+                    <div class="info-brand">
+                        <span class="brand-line"></span>
+                        <span id="infoBrand">BYD · 2026</span>
+                    </div>
+                    <h1 class="info-title" id="infoTitle">BYD Atto 2 <span class="accent-text">Essential</span></h1>
+                    <div class="info-rating">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <strong>4.9</strong>
+                        <span>(238 reviews)</span>
+                    </div>
+                </div>
+
+                <div class="info-price">
+                    <div class="price-tag">
+                        <span class="price-amount" id="infoPrice">रू 4,595,000</span>
+                        <span class="price-per">/ per day</span>
+                    </div>
+                    <div class="price-note">
+                        <i class="fa-solid fa-tag"></i> Free cancellation up to 24h
+                    </div>
+                </div>
+
+                <p class="info-desc" id="infoDesc">
+                    The BYD Atto 2 is Nepal's most imported electric SUV — compact, efficient, and packed with modern tech.
+                </p>
+
+                <div class="specs-section">
+                    <div class="specs-head">
+                        <span class="specs-num">01</span>
+                        <h3>Technical Specifications</h3>
+                        <span class="specs-line"></span>
+                    </div>
+                    <div class="specs-grid" id="specsGrid"></div>
+                </div>
+
+                <div class="equip-section">
+                    <div class="specs-head">
+                        <span class="specs-num">02</span>
+                        <h3>Car Equipment</h3>
+                        <span class="specs-line"></span>
+                    </div>
+                    <ul class="equip-list" id="equipList"></ul>
+                </div>
+
+                <div class="rent-action">
+                    <a href="login.html" class="btn-cyber">
+                        <span class="btn-txt">
+                            <i class="fa-solid fa-key"></i>
+                            Rent This Vehicle
+                        </span>
+                        <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)" aria-label="Save">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <button class="btn-share" onclick="shareCar()" aria-label="Share">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </button>
+                </div>
+
+                <div class="rent-note">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Free cancellation · Fully insured · 24/7 roadside assistance
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="other-section">
+    <div class="container">
+        <div class="section-header-left">
+            <div>
+                <span class="eyebrow">Similar Fleet</span>
+                <h2>You may also like</h2>
+            </div>
+            <a href="vehicle.html" class="view-all-link">
+                View All <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="cars-grid" id="otherCars"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand"><i class="fa-solid fa-car"></i> Vehicle Rental</div>
+                <p>Best place to rent a vehicle in Nepal. Serving customers with trust and care since 2000.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="vehicle.html">Vehicle</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Vehicles</h4>
+                <ul>
+                    <li><a href="vehicle.html">BYD Atto</a></li>
+                    <li><a href="vehicle.html">Tata Nexon</a></li>
+                    <li><a href="vehicle.html">Hyundai Creta</a></li>
+                    <li><a href="vehicle.html">Royal Enfield</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><div><strong>Address</strong>Tikathali, Lalitpur, Nepal</div></div>
+                <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong>unoop@gmail.com</div></div>
+                <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><div><strong>Phone</strong>+977-98776652452</div></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2025 Vehicle Rental Nepal. All rights reserved.</div>
+            <div>Made with <i class="fa-solid fa-heart"></i> in Nepal</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ============================================
+    // VEHICLE DATABASE — Real Nepal Market (2026)
+    // Prices in Nepalese Rupees (NPR)
+    // ============================================
+    const vehicles = {
+        'atto2': {
+            brand: 'BYD',
+            year: '2026',
+            name: 'BYD Atto 2',
+            variant: 'Essential',
+            type: 'ELECTRIC · SUV',
+            priceNPR: 4595000,
+            pricePerDay: 2500,
+            description: 'The BYD Atto 2 Essential is Nepal\'s most imported electric SUV — 45.12 kWh battery, 312 km WLTP range, and modern tech. Priced at Rs 4.595 million in Nepal.',
+            images: [
+                'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&q=80',
+                'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=1200&q=80',
+                'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=1200&q=80',
+                'https://images.unsplash.com/photo-1554744512-d6c603f27c54?w=1200&q=80'
+            ],
+            topSpeed: 160,
+            accel: '7.9s',
+            power: 136,
+            specs: {
+                gearbox: 'Automatic',
+                fuel: 'Electric',
+                doors: '5 Doors',
+                ac: 'Yes',
+                seats: '5 Seats',
+                range: '312 km WLTP'
+            },
+            equipment: ['360° Camera', 'Wireless CarPlay', 'Ventilated Seats', 'Adaptive Cruise', 'Auto Park Assist', 'LED Headlights', 'Keyless Entry', '8 Speakers']
+        },
+        'nexon': {
+            brand: 'Tata',
+            year: '2026',
+            name: 'Tata Nexon',
+            variant: 'XZ+ EV',
+            type: 'ELECTRIC · COMPACT SUV',
+            priceNPR: 3599000,
+            pricePerDay: 3200,
+            description: 'Tata Nexon EV is one of Nepal\'s most trusted electric SUVs — 375 km range, 205mm ground clearance, and Tata\'s 5-star safety rating. Starting at Rs 35.99 lakh.',
+            images: [
+                'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1200&q=80',
+                'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=80',
+                'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1200&q=80',
+                'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&q=80'
+            ],
+            topSpeed: 150,
+            accel: '8.9s',
+            power: 129,
+            specs: {
+                gearbox: 'Automatic',
+                fuel: 'Electric',
+                doors: '5 Doors',
+                ac: 'Yes',
+                seats: '5 Seats',
+                range: '375 km'
+            },
+            equipment: ['6 Airbags', 'Sunroof', 'Digital Cockpit', 'Cruise Control', 'Rear Camera', 'Auto Climate', 'Push Start', 'Harman Audio']
+        },
+        'creta': {
+            brand: 'Hyundai',
+            year: '2026',
+            name: 'Hyundai Creta',
+            variant: 'SX(O) ICE',
+            type: 'PETROL · MID-SIZE SUV',
+            priceNPR: 5396000,
+            pricePerDay: 4500,
+            description: 'The Hyundai Creta is Nepal\'s best-selling mid-size SUV — now assembled locally in Nepal. Premium interior, powerful engine, and legendary reliability. Starting at Rs 53.96 lakh.',
+            images: [
+                'https://images.unsplash.com/photo-1631295868223-63265b40d9e4?w=1200&q=80',
+                'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1200&q=80',
+                'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=1200&q=80',
+                'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&q=80'
+            ],
+            topSpeed: 190,
+            accel: '9.0s',
+            power: 113,
+            specs: {
+                gearbox: 'CVT Automatic',
+                fuel: 'Petrol',
+                doors: '5 Doors',
+                ac: 'Yes',
+                seats: '5 Seats',
+                mileage: '17.7 km/l'
+            },
+            equipment: ['Panoramic Sunroof', 'Ventilated Seats', '360° Camera', 'Bose Audio', 'Wireless Charger', 'ADAS Level 2', 'Auto Park', 'Ambient Lighting']
+        },
+        'brezza': {
+            brand: 'Suzuki',
+            year: '2026',
+            name: 'Suzuki Brezza',
+            variant: 'ZXi+ Hybrid',
+            type: 'HYBRID · COMPACT SUV',
+            priceNPR: 4650000,
+            pricePerDay: 3800,
+            description: 'The Suzuki Brezza Hybrid is Nepal\'s most trusted compact SUV — exceptional fuel economy (24.3 km/l), low maintenance, and legendary Suzuki reliability.',
+            images: [
+                'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1200&q=80',
+                'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1200&q=80',
+                'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1200&q=80',
+                'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1200&q=80'
+            ],
+            topSpeed: 170,
+            accel: '12.0s',
+            power: 103,
+            specs: {
+                gearbox: 'Automatic',
+                fuel: 'Hybrid (Petrol)',
+                doors: '5 Doors',
+                ac: 'Yes',
+                seats: '5 Seats',
+                mileage: '24.3 km/l'
+            },
+            equipment: ['SmartPlay Infotainment', 'Cruise Control', 'Auto AC', 'Power Windows', 'Keyless Entry', 'Rear Camera', 'Dual Airbags', 'ABS + EBD']
+        },
+        'thar': {
+            brand: 'Mahindra',
+            year: '2026',
+            name: 'Mahindra Thar',
+            variant: 'ROXX MX1',
+            type: 'DIESEL · OFF-ROAD SUV',
+            priceNPR: 2234400,
+            pricePerDay: 5500,
+            description: 'The Mahindra Thar ROXX is Nepal\'s ultimate off-road SUV — built for Himalayan adventures with 225mm ground clearance and rugged diesel capability. Priced from Rs 22.34 lakh.',
+            images: [
+                'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1200&q=80',
+                'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=1200&q=80',
+                'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=1200&q=80',
+                'https://images.unsplash.com/photo-1611016186353-9af58c69a533?w=1200&q=80'
+            ],
+            topSpeed: 155,
+            accel: '11.2s',
+            power: 160,
+            specs: {
+                gearbox: '6-Speed Manual',
+                fuel: 'Diesel',
+                doors: '5 Doors',
+                ac: 'Yes',
+                seats: '5 Seats',
+                clearance: '225 mm'
+            },
+            equipment: ['4x4 Drive', 'Hill Assist', 'Rear Camera', 'Touchscreen', 'Cruise Control', 'Auto Climate', 'Alloy Wheels', 'LED DRLs']
+        },
+        'tiago': {
+            brand: 'Tata',
+            year: '2026',
+            name: 'Tata Tiago EV',
+            variant: 'XZ+ Tech',
+            type: 'ELECTRIC · HATCHBACK',
+            priceNPR: 2200000,
+            pricePerDay: 2200,
+            description: 'The Tata Tiago EV is Nepal\'s most affordable electric car — perfect for city commuting with zero emissions, ultra-low running costs, and 250 km range.',
+            images: [
+                'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=1200&q=80',
+                'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&q=80',
+                'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=1200&q=80',
+                'https://images.unsplash.com/photo-1554744512-d6c603f27c54?w=1200&q=80'
+            ],
+            topSpeed: 120,
+            accel: '10.5s',
+            power: 74,
+            specs: {
+                gearbox: 'Automatic',
+                fuel: 'Electric',
+                doors: '5 Doors',
+                ac: 'Yes',
+                seats: '5 Seats',
+                range: '250 km'
+            },
+            equipment: ['Fast Charging', 'Rear Camera', 'Touchscreen', 'Auto Climate', 'Keyless Entry', 'Dual Airbags', 'ABS', 'Regen Braking']
+        },
+        'seltos': {
+            brand: 'Kia',
+            year: '2026',
+            name: 'Kia Seltos',
+            variant: 'HTX IVT',
+            type: 'PETROL · MID-SIZE SUV',
+            priceNPR: 8590000,
+            pricePerDay: 4800,
+            description: 'The Kia Seltos is Nepal\'s stylish mid-size SUV — bold design, premium features, and powerful performance. HTX variant priced at Rs 85.90 lakh.',
+            images: [
+                'https://images.unsplash.com/photo-1617469767053-d3b523a0b982?w=1200&q=80',
+                'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1200&q=80',
+                'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=1200&q=80',
+                'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&q=80'
+            ],
+            topSpeed: 185,
+            accel: '9.8s',
+            power: 115,
+            specs: {
+                gearbox: 'IVT Automatic',
+                fuel: 'Petrol',
+                doors: '5 Doors',
+                ac: 'Yes',
+                seats: '5 Seats',
+                mileage: '16.5 km/l'
+            },
+            equipment: ['Panoramic Sunroof', 'Ventilated Seats', '360° Camera', 'Bose Audio', 'Wireless Charger', 'ADAS', 'Auto Park', 'Ambient Lighting']
+        },
+        'deepal': {
+            brand: 'Deepal',
+            year: '2026',
+            name: 'Deepal S05',
+            variant: 'Plus',
+            type: 'ELECTRIC · SUV',
+            priceNPR: 5399000,
+            pricePerDay: 6500,
+            description: 'The Deepal S05 Plus is a premium electric SUV that won the iF Design Award 2025 — sharp styling, 405 km range, and blazing fast charging. Priced at Rs 53.99 lakh.',
+            images: [
+                'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=1200&q=80',
+                'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&q=80',
+                'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=1200&q=80',
+                'https://images.unsplash.com/photo-1554744512-d6c603f27c54?w=1200&q=80'
+            ],
+            topSpeed: 180,
+            accel: '7.3s',
+            power: 175,
+            specs: {
+                gearbox: 'Automatic',
+                fuel: 'Electric',
+                doors: '5 Doors',
+                ac: 'Yes',
+                seats: '5 Seats',
+                range: '405 km WLTP'
+            },
+            equipment: ['15.4" Screen', 'Sony Audio', 'V2L Function', 'Fast Charging', 'Panoramic Roof', 'Wireless CarPlay', '360° Camera', 'Ambient Lighting']
+        },
+        'royalenfield': {
+            brand: 'Royal Enfield',
+            year: '2026',
+            name: 'Royal Enfield Classic 350',
+            variant: 'Gorkha Edition',
+            type: 'PETROL · MOTORCYCLE',
+            priceNPR: 599000,
+            pricePerDay: 1800,
+            description: 'The Royal Enfield Classic 350 Gorkha Edition is a special edition motorcycle inspired by the heritage of the Gorkha community. Priced at Rs 5.99 lakh in Nepal.',
+            images: [
+                'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=1200&q=80',
+                'https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=1200&q=80',
+                'https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=1200&q=80',
+                'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=1200&q=80'
+            ],
+            topSpeed: 120,
+            accel: '12.5s',
+            power: 20,
+            specs: {
+                gearbox: '5-Speed Manual',
+                fuel: 'Petrol',
+                engine: '349 cc',
+                ac: 'No',
+                seats: '2 Seats',
+                mileage: '35 km/l'
+            },
+            equipment: ['Dual Channel ABS', 'Tripper Navigation', 'LED Lights', 'USB Charging', 'Slipper Clutch', 'Digital Console', 'Tubeless Tyres', 'Disc Brakes']
+        },
+        'yamaha': {
+            brand: 'Yamaha',
+            year: '2026',
+            name: 'Yamaha FZ-S FI',
+            variant: 'Hybrid',
+            type: 'HYBRID · MOTORCYCLE',
+            priceNPR: 496900,
+            pricePerDay: 1500,
+            description: 'The Yamaha FZ-S FI Hybrid is Nepal\'s first hybrid motorcycle — combining petrol efficiency with electric assist for superior mileage and performance. Priced at Rs 4.96 lakh.',
+            images: [
+                'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1200&q=80',
+                'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=1200&q=80',
+                'https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=1200&q=80',
+                'https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=1200&q=80'
+            ],
+            topSpeed: 115,
+            accel: '11.0s',
+            power: 12.4,
+            specs: {
+                gearbox: '5-Speed Manual',
+                fuel: 'Hybrid (Petrol)',
+                engine: '149 cc',
+                ac: 'No',
+                seats: '2 Seats',
+                mileage: '55 km/l'
+            },
+            equipment: ['Hybrid Assist', 'LED Headlight', 'Digital Console', 'Single Channel ABS', 'Traction Control', 'Side Stand Cut-off', 'Bluetooth', 'USB Charger']
+        },
+        'honda': {
+            brand: 'Honda',
+            year: '2026',
+            name: 'Honda CB Shine',
+            variant: '125',
+            type: 'PETROL · COMMUTER BIKE',
+            priceNPR: 265900,
+            pricePerDay: 1000,
+            description: 'The Honda CB Shine 125 is Nepal\'s most trusted commuter motorcycle — legendary Honda reliability, exceptional fuel economy, and low maintenance. Starting at Rs 2.66 lakh.',
+            images: [
+                'https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=1200&q=80',
+                'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=1200&q=80',
+                'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=1200&q=80',
+                'https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=1200&q=80'
+            ],
+            topSpeed: 95,
+            accel: '15.0s',
+            power: 10.7,
+            specs: {
+                gearbox: '5-Speed Manual',
+                fuel: 'Petrol',
+                engine: '125 cc',
+                ac: 'No',
+                seats: '2 Seats',
+                mileage: '65 km/l'
+            },
+            equipment: ['CBS Braking', 'LED Headlight', 'Digital Meter', 'Tubeless Tyres', 'Side Stand Indicator', 'Engine Kill Switch', 'USB Charger', 'Combi Brake']
+        }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const vehicleKey = params.get('id') || 'atto2';
+    const car = vehicles[vehicleKey] || vehicles['atto2'];
+
+    function formatNPR(amount) {
+        return 'रू ' + amount.toLocaleString('en-IN');
+    }
+
+    function populateVehicle(car) {
+        document.getElementById('breadcrumbName').textContent = car.name;
+        document.getElementById('infoBrand').textContent = `${car.brand} · ${car.year}`;
+        document.getElementById('infoTitle').innerHTML = `${car.name} <span class="accent-text">${car.variant}</span>`;
+        document.getElementById('infoDesc').textContent = car.description;
+        document.getElementById('visualType').textContent = car.type;
+        document.getElementById('infoPrice').textContent = formatNPR(car.priceNPR);
+
+        document.getElementById('qsTopSpeed').textContent = car.topSpeed;
+        document.getElementById('qsAccel').textContent = car.accel;
+        document.getElementById('qsPower').textContent = car.power;
+
+        const mainImg = document.getElementById('mainImage');
+        mainImg.src = car.images[0];
+        mainImg.alt = car.name;
+
+        const thumbStrip = document.getElementById('thumbnailStrip');
+        thumbStrip.innerHTML = car.images.map((img, i) => `
+            <button class="thumb ${i === 0 ? 'active' : ''}" data-img="${img}">
+                <img src="${img.replace('w=1200', 'w=400')}" alt="">
+            </button>
+        `).join('');
+
+        document.querySelectorAll('.visual-thumbs .thumb').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.visual-thumbs .thumb').forEach(t => t.classList.remove('active'));
+                btn.classList.add('active');
+                const newSrc = btn.dataset.img;
+                mainImg.style.opacity = '0';
+                setTimeout(() => {
+                    mainImg.src = newSrc;
+                    mainImg.style.opacity = '1';
+                }, 180);
+            });
+        });
+
+        const specsGrid = document.getElementById('specsGrid');
+        const specIcons = {
+            gearbox: 'fa-gear',
+            fuel: 'fa-gas-pump',
+            doors: 'fa-door-closed',
+            ac: 'fa-snowflake',
+            seats: 'fa-couch',
+            range: 'fa-road',
+            mileage: 'fa-road',
+            clearance: 'fa-arrows-up-down',
+            engine: 'fa-motorcycle'
+        };
+        specsGrid.innerHTML = Object.entries(car.specs).map(([key, value]) => `
+            <div class="spec-item">
+                <i class="fa-solid ${specIcons[key] || 'fa-circle-info'}"></i>
+                <div>
+                    <span class="spec-label">${key.charAt(0).toUpperCase() + key.slice(1)}</span>
+                    <strong>${value}</strong>
+                </div>
+            </div>
+        `).join('');
+
+        const equipList = document.getElementById('equipList');
+        equipList.innerHTML = car.equipment.map(item => `
+            <li><i class="fa-solid fa-circle-check"></i> ${item}</li>
+        `).join('');
+
+        document.title = `${car.name} ${car.variant} | Vehicle Rental Nepal`;
+    }
+
+    populateVehicle(car);
+
+    const sl = document.getElementById('speedLines');
+    for (let i = 0; i < 30; i++) {
+        const line = document.createElement('span');
+        line.style.top = Math.random() * 100 + '%';
+        line.style.animationDelay = Math.random() * 4 + 's';
+        line.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+        line.style.opacity = 0.15 + Math.random() * 0.35;
+        sl.appendChild(line);
+    }
+
+    function toggleWishlist(btn) {
+        btn.classList.toggle('active');
+        const icon = btn.querySelector('i');
+        if (btn.classList.contains('active')) {
+            icon.classList.replace('fa-regular', 'fa-solid');
+            btn.style.color = '#ff1744';
+        } else {
+            icon.classList.replace('fa-solid', 'fa-regular');
+            btn.style.color = '';
+        }
+    }
+
+    function shareCar() {
+        if (navigator.share) {
+            navigator.share({
+                title: `${car.name} ${car.variant}`,
+                text: `Check out this ${car.name} on Vehicle Rental Nepal!`,
+                url: window.location.href
+            }).catch(() => {});
+        } else {
+            navigator.clipboard.writeText(window.location.href);
+            alert('🔗 Link copied to clipboard!');
+        }
+    }
+
+    const otherCarsData = [
+        { key: 'nexon', name: 'Tata Nexon', type: 'Electric · SUV', price: 3200, image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&q=80' },
+        { key: 'creta', name: 'Hyundai Creta', type: 'Petrol · SUV', price: 4500, image: 'https://images.unsplash.com/photo-1631295868223-63265b40d9e4?w=600&q=80' },
+        { key: 'royalenfield', name: 'Royal Enfield', type: 'Motorcycle', price: 1800, image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&q=80' },
+        { key: 'yamaha', name: 'Yamaha FZ-S', type: 'Hybrid · Bike', price: 1500, image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80' }
+    ];
+
+    const otherCarsContainer = document.getElementById('otherCars');
+    if (otherCarsContainer) {
+        otherCarsContainer.innerHTML = otherCarsData.map(c => `
+            <div class="car-card">
+                <div class="car-image">
+                    <span class="car-badge">✓ Available</span>
+                    <img src="${c.image}" alt="${c.name}" loading="lazy">
+                </div>
+                <div class="car-body">
+                    <div class="car-title-row">
+                        <div>
+                            <h3>${c.name}</h3>
+                            <p class="type">${c.type}</p>
+                        </div>
+                        <div class="car-price">
+                            <span class="amount">${formatNPR(c.price)}</span>
+                            <span class="per">per day</span>
+                        </div>
+                    </div>
+                    <div class="car-specs">
+                        <span><i class="fa-solid fa-cogs"></i> ${c.type.includes('Motorcycle') || c.type.includes('Bike') ? 'Manual' : 'Auto'}</span>
+                        <span><i class="fa-solid fa-gas-pump"></i> ${c.type.includes('Electric') ? 'Electric' : 'Petrol'}</span>
+                        <span><i class="fa-solid fa-snowflake"></i> ${c.type.includes('Motorcycle') || c.type.includes('Bike') ? 'Open' : 'AC'}</span>
+                    </div>
+                    <div class="car-actions">
+                        <a href="individualVehicle.html?id=${c.key}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+</script>
+
+</body>
+</html>
